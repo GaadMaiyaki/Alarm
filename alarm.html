@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+    <head>
+        <style></style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Alarm System</title>
+        <link rel="stylesheet" href="alarm.css" type="text/css"/>
+        
+        
+    </head>
+
+    <body>
+        
+        <main id="main">
+            <section class="section">
+                <div>
+                    <h1>ALARM SYSTEM</h1>
+                </div>
+                <div class="abcc">
+                    <div class="aa"><h5>Hours</h5></div>
+                    <div class="bb"><h5>Minutes</h5></div>
+                    <div class="cc"><h5>Seconds</h5></div>
+                </div>
+                
+                <div class="abc">
+                    <h4></h4><div class="a" id='Hour'></div><span>:</span>
+                    <div class="b" id ='Minute'></div><span>:</span>
+                    <div class="c" id="Second"></div>
+                </div>
+                
+                <div>
+                    <h6><div class="showTime" id="showTime"> </div></h6>
+                    <div class="setAlarm" id="sA">SET YOUR ALARM HERE</div>
+                </div>
+                
+                <div class="setBox" id="setBox">
+                    <div class="aaa"><input type="text" id="iH" maxlength="2"/></div><span>:</span>
+                    <div class="bbb"><input type="text" id='iM' maxlength="2"/></div>
+                </div>
+                
+                <div class="msg" id="msg">
+                    <em><h6><div id="message"></div></h6></em>
+                    <div style="display:flex; justify-content: center;">
+                    <div id="spin"></div>
+                    <em><div id="message2">I am your database notifier</div></em>
+                </div>
+                
+                <div><input type="text" id="uAns" style=" color: white" placeholder="type your answer here" /></div>
+                    <button  style="cursor: pointer; border-radius: 1.8px; border: none; padding: 5px; margin-top: 10px; width: 45px; height:30px;" id="dis1" onclick='pauseAlarm2();' ><h3>Ok</h3></button>
+                </div>
+                
+                <div id="showL" style="display: flex; justify-content: center; padding: 10px; border-bottom: none;">
+                    <div id="msgL"></div>
+                    <div id="loader"></div>
+                </div>
+                <div class="event" id="event">
+                    <h4>Event's List</h4>
+                    <table width="100%">
+                        <tr>
+                           <th>Hour(s) & Minutes</th>
+                           <th>Save Alarm(s)</th>
+                        </tr>
+                        
+                        <tr>
+                            <td><input type="number" id="hr"/>:<input type="number" id="min"/>
+                            <select  id="meridian">
+                                <option>AM</option>
+                                <option>PM</option>
+                            </select>
+                            </td>
+                            <td><button class="btnSave2" id="saveE" onclick ="storeAlarmLocal()">Save</button></td>
+                        </tr> 
+                    </table>
+                </div>
+                
+                <div id="eventS" class="eventS" style="text-transform: capitalize;">
+                    <h3 style="text-align: center; background: rgb(71, 9, 9); color: rgb(245, 230, 245); padding: 10px;">Your List of Events</h3>
+                    <em><h4><div id="notify" style="margin-top: 10px;"></div></h4></em>
+                    <bold><div style="padding: 10px;" id="eventL" ></div></bold>
+                    <h4><div style="padding: 10px;" id="eventsDiv"></div></h4>
+                    <button id="clear" onclick='clearLocal();'>CLEAR</button>
+                </div>
+                
+                <div class="button" id="button">
+                    <button style="color:rgb(235, 235, 228); width: 100px;" id="dis3" onclick='controlAlarm();'>SET</button>
+                    <button style="background: red; width: 100px;" id="dis2" onclick='pauseAlarm();'>STOP</button><br>
+                    <button style="color:rgb(235, 235, 228); background: #420714; width: 100px;  transition-duration: 5s;" id="snooze" onclick='snoozeAlarm();'>SNOOZE</button>
+                    <button style=" background: #0b0742; color:rgb(235, 235, 228); width: 100px;" id="save" onclick='saveAlarm();'>EVENTS</button>
+                </div>
+                
+                <div class="ev" style="display:flex; justify-content: center; border: none; margin: 10px;">
+                    <button id="eventCheck" onclick="eventInvoke();">Chk Events</button>
+                    <button id="return" >Return</button>
+                </div>
+                
+                <footer>
+                    <h5>&copy; MayakiProject2020</h5>
+                </footer>
+            </section>
+
+        </main>
+        
+
+
+    </body>
+    <script type="text/javascript" src="alarm.js"></script>
+</html>
